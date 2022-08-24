@@ -1,7 +1,3 @@
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
-
 const refs = {
   input: document.getElementById("controls").children[0],
   btnCreate: document.getElementById("controls").children[1],
@@ -17,7 +13,13 @@ refs.btnCreate.addEventListener("click", () => {
 
 refs.btnDestroy.addEventListener("click", destroyBoxes);
 
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
 function createBoxes(amount) {
+  destroyBoxes();
+
   let width = 30;
   let height = 30;
 
